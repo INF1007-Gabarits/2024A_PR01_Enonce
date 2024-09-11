@@ -99,3 +99,23 @@ La remise du projet doit se faire en déposant une archive `.zip` contenant l'in
 - **Pénalités pour retard** : Chaque jour de retard entraînera une pénalité de 15 % sur la note finale.
 
 Assurez-vous que votre archive `.zip` est bien organisée et qu'elle inclut tous les fichiers nécessaires au bon fonctionnement du projet.
+
+### Barème
+
+| **Partie**                                | **Tâche**                                                                 | **Points** |
+|-------------------------------------------|---------------------------------------------------------------------------|------------|
+| **Partie 1 : Variables et structures de contrôle** |                                                                           | **/7**     |
+|                                           | 1. Compléter la fonction `create_board()` pour générer un labyrinthe fonctionnel.| 4          |
+|                                           | 2. Implémenter `create_coins(board)` pour placer correctement les pièces dans le labyrinthe.| 2          |
+|                                           | 3. Implémenter `create_special_coins(board)` pour placer les pièces spéciales aux positions spécifiées.| 1          |
+| **Partie 2 : Logique des mouvements et interactions** |                                                                           | **/7**     |
+|                                           | 1. Implémenter `handle_keypress()` pour gérer les mouvements de Pac-Man en fonction des touches pressées.| 2          |
+|                                           | 2. Compléter la fonction `move()` dans `pacman.py` pour gérer le déplacement de Pac-Man.| 2          |
+|                                           | 3. Compléter la fonction `move()` dans `ghost.py` pour gérer les mouvements des fantômes.| 2          |
+|                                           | 4. Implémenter `change_direction()` dans `ghost.py` pour changer la direction des fantômes quand nécessaire.| 1          |
+| **Partie 3 : Gestion des collisions et du score**  |                                                                           | **/6**     |
+|                                           | 1. Implémenter `check_collision()` pour vérifier si Pac-Man peut se déplacer sans entrer en collision.| 3          |
+|                                           | 2. Implémenter `check_score()` pour gérer la collecte des pièces et mettre à jour le score.| 2          |
+|                                           | 3. Implémenter `check_special_coins()` pour gérer la collecte des pièces spéciales.| 1          |
+| **Total**                                 |                                                                           | **/20**    |
+
