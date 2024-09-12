@@ -1,5 +1,8 @@
 # Projet Pac-Man en Python
 
+### Requirements
+`python3 -m pip install -U pygame --user`
+
 ## Introduction
 
 Pac-Man est un jeu vidéo d'arcade classique où le joueur contrôle Pac-Man, un personnage qui se déplace dans un labyrinthe pour manger des pastilles tout en évitant les fantômes. Dans ce projet, nous allons réaliser une version simplifiée de Pac-Man en utilisant le langage Python et la bibliothèque Pygame. Le jeu sera contrôlé à l'aide des flèches du clavier pour déplacer Pac-Man dans le labyrinthe.
