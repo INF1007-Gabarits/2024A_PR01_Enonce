@@ -69,6 +69,13 @@ Votre tâche est donc d'implémenter ces fonctions pour générer le labyrinthe 
 
 ![Pac-Man Labyrinthe](./assets/images/Board_Exemple.png)
 
+![Pac-Man Collision with Ghost](./assets/images/Pacman_collision_with_ghost.gif)
+
+![](./assets/images/Pacman_eats_ghost.gif)
+
+![](./assets/images/Vous_avez_gagné.gif)
+
+
 
 #### Partie 2 : 
 
