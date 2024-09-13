@@ -1,4 +1,4 @@
-# parametre de l'ecran
+# parametre de l'ecran Mehdi CHahir
 screen_width = 800
 screen_height = 800
 
