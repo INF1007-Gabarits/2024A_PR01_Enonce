@@ -113,14 +113,14 @@ class Game:
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers le haut
         if event.key == pygame.K_UP :
             if not self.check_collision((self.pacman.x, self.pacman.y)) :
-                self.pacman.set_direction((0, 1))
+                self.pacman.set_direction((0, -1))
 
         # TODO: Vérifiez si la touche pressée est la flèche vers le bas
             # TODO: Vérifiez si Pac-Man peut se déplacer vers le bas sans entrer en collision
                 # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers le bas
         if event.key == pygame.K_DOWN :
             if not self.check_collision((self.pacman.x, self.pacman.y)) :
-                self.pacman.set_direction((0, -1))
+                self.pacman.set_direction((0, 1))
 
     def check_collision(self, direction):
         pass
@@ -163,7 +163,7 @@ class Game:
             # TODO: Ajouter des points au score du joueur pour la pièce collectée (par exemple, 10 points)
             self.score += 10
 
-        if len(self.coins) == 0:
+        if len(self.coins) == 0 :
             self.end.render(True)
             self.game_won = True
             self.game_over = True

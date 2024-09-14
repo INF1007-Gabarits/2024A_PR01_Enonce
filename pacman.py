@@ -42,23 +42,29 @@ class PacMan:
 
     def move(self):
         if self.direction:
-            pass
+            #pass
         
             # TODO: Extraire la direction de déplacement à partir de l'attribut `self.direction`.
-            
+            dir = self.direction
+
             # TODO: Calculer les nouvelles coordonnées X et Y en fonction de la direction
             # Ajouter la direction à la position actuelle (self.x, self.y) pour obtenir la nouvelle position.
+            newX = self.x + dir[0]
+            newY = self.y + dir[1]
 
             # TODO: Vérifier si la nouvelle position entre en collision avec un mur
             # Utiliser `self.board[new_y][new_x]` pour voir si la case correspond à un chemin (0) ou à un mur (1).
-
+            if self.board[newY][newX] == 0 :
                 # TODO: Mettre à jour la position de Pac-Man si aucun mur n'est rencontré
+                self.x = newX
+                self.y = newY
 
                 # TODO: Convertir les nouvelles coordonnées de la grille en position à l'écran
                 # Utiliser une fonction comme `grid_to_screen` pour obtenir les coordonnées sur l'écran.
-
+                posOnScreen = grid_to_screen((self.x, self.y), tile_size = [self.size_grid, self.size_grid])
                 # TODO: Mettre à jour la position du rectangle de Pac-Man dans l'interface
                 # Mettre à jour `self.rect.topleft` avec la nouvelle position à l'écran pour déplacer l'affichage de Pac-Man.
+                self.rect.topleft = posOnScreen
 
     def set_direction(self, direction):
         self.direction = direction
