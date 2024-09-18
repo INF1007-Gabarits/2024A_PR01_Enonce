@@ -1,5 +1,4 @@
 special_coins_pos = [(1, 1), (14, 1), (1, 13), (14, 13)]
-center_pos = [(12, 7), (11, 7), (13, 7), (14, 7)]
 
 def create_board():
 
@@ -38,8 +37,6 @@ def create_coins(board):
     # en remplacant x et y par la position. Notez que le premier coin est à la position (1, 1)
 
     # TODO: Retirer les coins de chaque "coin" du carré. Vous devez utiliser la variable 'special_coins_pos' et la fonction 'remove'.
-
-    # TODO: Retirer les coins aux positions centrales, en utilisant la variable 'center_pos'.
 
     return coins
 
