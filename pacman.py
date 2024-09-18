@@ -43,8 +43,10 @@ class PacMan:
 	def move(self):
 		if self.direction:
 			#new_position = (self.x + self.direction[0], self.y + self.direction[1]);
-			new_x = self.x + self.direction[0];
-			new_y = self.y + self.direction[1];
+			dx, dy = self.direction;
+
+			new_x = self.x + dx;
+			new_y = self.y + dy;
 
 			if (self.board[new_y][new_x] == 0):
 				self.x = new_x;
