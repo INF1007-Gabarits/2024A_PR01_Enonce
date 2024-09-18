@@ -35,10 +35,14 @@ def create_coins(board):
         for x in range(len(board[y])):
             if board[y][x] == 0:
                 coins.append((x, y))
+    
+    Liste_coins_remove = [(1,1), (14,1), (1,13), (14,13),(5,7),(5,8),(5,9),(5,10)]
+    
+    for x in Liste_coins_remove:
+        coins.remove (x)
+    
 
-
-
-    coins.append((1, 1)) # Placeholder, ligne à retirer
+ # Placeholder, ligne à retirer
 
     # TODO: Ajouter la position de toutes les cases '0' à la variable coins. Pour ajouter un élément, vous pouvez utiliser l'expression suivante :
     # coins.append((x, y))
@@ -52,6 +56,14 @@ def create_coins(board):
 
 def create_special_coins(board):
     special_coins = []
+
+    Liste_coins_add_special = [(1,1), (14,1), (1,13), (14,13)]
+    for x in Liste_coins_add_special :
+        special_coins.append(x)
+    
+    Liste_coins_add_pos = [(5,7),(5,8),(5,9),(5,10)]
+    for y in Liste_coins_add_pos :
+        special_coins_pos.append(y)
 
     # TODO: Ajouter des coins aux positions spéciales, en utilisant la variable 'special_coins_pos'.
     
