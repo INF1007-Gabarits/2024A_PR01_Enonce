@@ -38,14 +38,14 @@ while running:
     # Mettre à jour les éléments du jeu
     screen.fill(background_color)
 
-    if not game_started:
+    if not game_started :
         # Afficher l'image de fond
         home.render(wins)
-    else:
+    else :
         game.render()
         game.update() 
 
-    if game.game_over:
+    if game.game_over :
         if game.game_won:
             wins += 1
             

@@ -28,8 +28,7 @@ class Ghost:
 
     def move(self):
         # Si le fantôme n'est pas "mort", commencez le calcul de sa prochaine position
-        if not self.dead:
-            pass
+        if not self.dead :
             # TODO: Calculer la prochaine position en fonction de la direction et de la vitesse
             # Utilisez `self.direction` pour déterminer la direction et `self.speed` pour le déplacement.
             # La formule pour calculer la prochaine position est la suivante:
@@ -43,10 +42,11 @@ class Ghost:
 
             # TODO Vérifier si la prochaine position entre en collision avec un mur
             # Utilisez `self.check_collision()` pour détecter si le fantôme va heurter un mur.
-            if self.check_collision(next_rect) :
+            if not self.check_collision(next_rect) :
                 # TODO: Si aucune collision n'est détectée, mettre à jour la position du fantôme
-                self.x = next_x
-                self.y = next_y
+                self.pos = [next_x, next_y]
+
+                self.rect.topleft = self.pos
             else :
                 # TODO: Changer la direction du fantôme s'il rencontre un mur
                 self.change_direction()
@@ -68,7 +68,7 @@ class Ghost:
         for x in range(int(rect.left / TILE_WIDTH), int(rect.right / TILE_WIDTH) + 1):
             for y in range(int(rect.top / TILE_HEIGHT), int(rect.bottom / TILE_HEIGHT) + 1):
                 if 0 <= x < len(self.maze[0]) and 0 <= y < len(self.maze):
-                    if self.maze[y][x] == 1: # Vérifier si le fantôme touche un mur
+                    if self.maze[y][x] == 1 : # Vérifier si le fantôme touche un mur
                         return True
         return False
 
@@ -85,8 +85,8 @@ class Ghost:
         # TODO: Parcourir chaque direction et vérifier si elle est valide (pas de collision avec un mur)
         for dir in directions :
             # TODO: Calculer la prochaine position du fantôme en fonction de la direction
-            next_x = self.pos[0] + dir[0]
-            next_y = self.pos[1] + dir[1]
+            next_x = self.pos[0] + dir[0] * self.speed
+            next_y = self.pos[1] + dir[1] * self.speed
 
             #Créer un rectangle représentant cette nouvelle position
             next_rect = pygame.Rect(next_x, next_y, GHOST_SIZE[0], GHOST_SIZE[1])
@@ -95,8 +95,8 @@ class Ghost:
             if not self.check_collision(next_rect) :    
                 # TODO: Si aucune collision n'est détectée, définir cette direction comme la nouvelle direction du fantôme avec `self.set_direction()` et sortir de la boucle
                 self.direction = dir
-                self.pos[0] = next_x
-                self.pos[1] = next_y
+                self.pos = [next_x, next_y]
+                
                 return  # Sortir de la méthode une fois la direction changée
 
     def stop(self):

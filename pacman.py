@@ -41,9 +41,7 @@ class PacMan:
         self.screen.blit(rotated_image, (screen_x, screen_y))
 
     def move(self):
-        if self.direction:
-            #pass
-        
+        if self.direction :
             # TODO: Extraire la direction de déplacement à partir de l'attribut `self.direction`.
             dir = self.direction
 
@@ -61,7 +59,7 @@ class PacMan:
 
                 # TODO: Convertir les nouvelles coordonnées de la grille en position à l'écran
                 # Utiliser une fonction comme `grid_to_screen` pour obtenir les coordonnées sur l'écran.
-                posOnScreen = grid_to_screen((self.x, self.y), tile_size = [self.size_grid, self.size_grid])
+                posOnScreen = grid_to_screen([self.x, self.y], tile_size = [self.size_grid, self.size_grid])
                 # TODO: Mettre à jour la position du rectangle de Pac-Man dans l'interface
                 # Mettre à jour `self.rect.topleft` avec la nouvelle position à l'écran pour déplacer l'affichage de Pac-Man.
                 self.rect.topleft = posOnScreen
