@@ -70,13 +70,13 @@ Dans le fichier `helper.py`, vous devez compléter les trois fonctions suivantes
 
 Votre tâche est donc d'implémenter ces fonctions pour générer le labyrinthe et les pièces du jeu. Ces éléments constituent la base sur laquelle Pac-Man évoluera dans le jeu. La vue du labyrinthe généré doit ressembler à l'image ci-dessous. Assurez-vous également que les deux dernières lignes du tableau (dans la liste `maze`) restent entièrement composées de valeurs `1`, représentant les murs du labyrinthe.
 
-![Pac-Man Labyrinthe](./assets/images/Board_Exemple.png)
+![Pac-Man Labyrinthe](assets/images/Board_Exemple.png)
 
-![Pac-Man Collision with Ghost](./assets/images/Pacman_collision_with_ghost.gif)
+![Pac-Man Collision with Ghost](assets/images/Pacman_collision_with_ghost.gif)
 
-![](./assets/images/Pacman_eats_ghost.gif)
+![](assets/images/Pacman_eats_ghost.gif)
 
-![](./assets/images/Vous_avez_gagné.gif)
+![](assets/images/Vous_avez_gagné.gif)
 
 
 
