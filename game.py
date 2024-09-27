@@ -166,9 +166,9 @@ class Game:
 
     def check_special_coins(self):
         # TODO: Vérifier si la position actuelle de Pac-Man (en coordonnées de grille) correspond à une position de pièce spéciale
-        for special_coin in self.special_coins:
+        if (self.pacman.x, self.pacman.y) in self.special_coins:
             # TODO: Si Pac-Man est sur une pièce spéciale, retirer cette pièce spéciale de la liste
-            self.special_coins.remove(special_coin)
+            self.special_coins.remove((self.pacman.x, self.pacman.y))
             # TODO: Ajouter des points au score du joueur pour la pièce spéciale collectée
             self.score += 50
             # TODO: Activer le mode "manger" en appelant la méthode appropriée pour activer le mode "manger" des fantômes avec self.activate_eat_mode()
