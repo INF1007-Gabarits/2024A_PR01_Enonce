@@ -36,7 +36,7 @@ PACMAN_START_POS = (7, 9)
 RANDOM_POS = [RESET_POS1, RESET_POS2, RESET_POS3, RESET_POS4]
 
 # vitesse du ghost
-SPEED = 0.35
+SPEED = 0.25
 EDIBLE_GHOST_TIMER = 5
 
 # fonction utilitaires
