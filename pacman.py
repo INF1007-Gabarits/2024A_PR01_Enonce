@@ -56,10 +56,10 @@ class PacMan:
                 self.y = new_y
                 # TODO: Convertir les nouvelles coordonnées de la grille en position à l'écran
                 # Utiliser une fonction comme `grid_to_screen` pour obtenir les coordonnées sur l'écran.
-                grid_to_screen(grid_pos = [new_x, new_y], tile_size = [self.size_grid, self.size_grid])
+                self.screen_pos = grid_to_screen(grid_pos = [new_x, new_y], tile_size = [self.size_grid, self.size_grid])
                 # TODO: Mettre à jour la position du rectangle de Pac-Man dans l'interface
                 # Mettre à jour `self.rect.topleft` avec la nouvelle position à l'écran pour déplacer l'affichage de Pac-Man.
-                self.rect.topleft = [self.x, self.y]
+                self.rect.topleft = self.screen_pos
     def set_direction(self, direction):
         self.direction = direction
 
@@ -69,6 +69,8 @@ class PacMan:
     def reset(self):
         self.x, self.y = PACMAN_START_POS
         self.direction = None
+        self.screen_pos = grid_to_screen(grid_pos = [self.x, self.y], tile_size = [self.size_grid, self.size_grid])
+        self.rect.topleft = self.screen_pos
 
     def die(self):
 
