@@ -42,6 +42,14 @@ class PacMan:
 
     def move(self):
         if self.direction:
+            dx, dy = self.direction
+            new_x = self.x + dx
+            new_y = self.y + dy
+            if self.board[new_y][new_x] == 0:
+                self.x = new_x
+                self.y = new_y
+                self.screen_pos = grid_to_screen(grid_pos=[self.x, self.y], tile_size=[self.size_grid, self.size_grid])
+                self.rect.topleft = self.screen_pos
             pass
         
             # TODO: Extraire la direction de déplacement à partir de l'attribut `self.direction`.

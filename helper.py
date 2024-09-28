@@ -2,11 +2,7 @@ special_coins_pos = [(1, 1), (14, 1), (1, 13), (14, 13)]
 center_pos = [(12, 7), (11, 7), (13, 7), (14, 7)]
 
 def create_board():
-
-    # TODO Create a board with the following structure
-    # 1 -> Wall
-    # 0 -> Path
-    
+  
     maze = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], # Top boundary
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], # Path
@@ -36,35 +32,21 @@ def create_coins(board):
             if board[y][x] == 0:
                 coins.append((x, y))
     
-    Liste_coins_remove = [(1,1), (14,1), (1,13), (14,13),(5,7),(5,8),(5,9),(5,10)]
+    for pos in special_coins_pos :
+        if pos in coins:
+            coins.remove(pos)
     
-    for x in Liste_coins_remove:
-        coins.remove (x)
-    
+    for poss in center_pos:
+        if poss in coins:
+            coins.remove(poss)
 
- # Placeholder, ligne à retirer
-
-    # TODO: Ajouter la position de toutes les cases '0' à la variable coins. Pour ajouter un élément, vous pouvez utiliser l'expression suivante :
-    # coins.append((x, y))
-    # en remplacant x et y par la position. Notez que le premier coin est à la position (0, 0)
-
-    # TODO: Retirer les coins de chaque "coin" du carré. Vous devez utiliser la variable 'special_coins_pos' et la fonction 'remove'.
-
-    # TODO: Retirer les coins aux positions centrales, en utilisant la variable 'center_pos'.
 
     return coins
 
 def create_special_coins(board):
     special_coins = []
 
-    Liste_coins_add_special = [(1,1), (14,1), (1,13), (14,13)]
-    for x in Liste_coins_add_special :
-        special_coins.append(x)
-    
-    Liste_coins_add_pos = [(5,7),(5,8),(5,9),(5,10)]
-    for y in Liste_coins_add_pos :
-        special_coins_pos.append(y)
-
-    # TODO: Ajouter des coins aux positions spéciales, en utilisant la variable 'special_coins_pos'.
+    for pos in special_coins_pos:
+        special_coins_pos.append(pos)
     
     return special_coins
