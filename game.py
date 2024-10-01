@@ -95,10 +95,6 @@ class Game:
     def handle_keypress(self, event):
         pass
         
-        while event.key == pygame.K_RIGHT:
-            if self.check_collision((1, 0)) is True:
-                self.pacman.set_direction((1, 0))
-
         if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
                      if self.check_collision((1, 0)):
@@ -113,33 +109,17 @@ class Game:
                     if self.check_collision((0, 1)):
                         self.pacman.set_direction((0, 1))
 
-
-
-        # TODO: Vérifiez si la touche pressée est la flèche droite avec event.key == pygame.K_RIGHT
-            # TODO: Vérifiez si Pac-Man peut se déplacer à droite sans entrer en collision avec self.check_collision((1, 0))
-                # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers la droite avec self.pacman.set_direction((1, 0))
-
-        # TODO: Vérifiez si la touche pressée est la flèche gauche
-            # TODO: Vérifiez si Pac-Man peut se déplacer à gauche sans entrer en collision
-                # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers la gauche
-
-        # TODO: Vérifiez si la touche pressée est la flèche vers le haut
-            # TODO: Vérifiez si Pac-Man peut se déplacer vers le haut sans entrer en collision
-                # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers le haut
-
-        # TODO: Vérifiez si la touche pressée est la flèche vers le bas
-            # TODO: Vérifiez si Pac-Man peut se déplacer vers le bas sans entrer en collision
-                # TODO: Si le déplacement est possible, définissez la nouvelle direction de Pac-Man vers le bas
                 
-
     def check_collision(self, direction):
-        pass
-        # TODO: Extraire les coordonnées de déplacement de la direction (dx, dy)
+        dx, dy = direction
 
-        # TODO: Calculer la nouvelle position de Pac-Man après le déplacement (new_x, new_y) avec la formule new_x = self.pacman.x + dx
-    
-        # TODO: Vérifier si la nouvelle position est un chemin valide ou un mur
-        # Utiliser la grille (`self.board`) pour déterminer si la case est un chemin (0) ou un mur (1). return True si c'est un chemin, False si c'est un mur.
+        new_x = self.pacman.x + dx
+        new_y = self.pacman.y + dy
+
+        if 0 <= new_x < len(self.board[0]) and 0 <= new_y < len(self.board):
+            if self.board[new_y][new_x] == 1: 
+                return True
+        return False
 
     def update(self):
         for ghost in self.ghosts:
@@ -157,10 +137,13 @@ class Game:
         self.check_special_coins()
 
     def check_score(self):
-        # TODO: Vérifier si la position actuelle de Pac-Man (en coordonnées de grille) correspond à une position de pièce en utilisant (self.pacman.x, self.pacman.y)
-            # TODO: Si Pac-Man est sur une pièce, la retirer de la liste des pièces restantes à collecter 
+        pacman_position = (self.pacman.x, self.pacman.y)
+            
+        if pacman_position in self.coins:
+            self.coins.remove(pacman_position)
+            self.score += 10  # Ajouter 10 points par pièce collectée
+            print(f"Score: {self.score}")
 
-            # TODO: Ajouter des points au score du joueur pour la pièce collectée (par exemple, 10 points)
 
         if len(self.coins) == 0:
             self.end.render(True)
@@ -168,15 +151,12 @@ class Game:
             self.game_over = True
 
     def check_special_coins(self):
-        pass
-        # TODO: Vérifier si la position actuelle de Pac-Man (en coordonnées de grille) correspond à une position de pièce spéciale
+        pacman_position = (self.pacman.x, self.pacman.y)
 
-            # TODO: Si Pac-Man est sur une pièce spéciale, retirer cette pièce spéciale de la liste
-            
-            # TODO: Ajouter des points au score du joueur pour la pièce spéciale collectée
-            
-            # TODO: Activer le mode "manger" en appelant la méthode appropriée pour activer le mode "manger" des fantômes avec self.activate_eat_mode()
-
+        if pacman_position in self.special_coins:
+            self.special_coins.remove(pacman_position)
+            self.score += 50 
+            self.activate_eat_mode()  # Activer le mode "manger"
 
     def activate_eat_mode(self):
         timer = threading.Timer(EDIBLE_GHOST_TIMER, self.deactivate_eat_mode)
