@@ -27,16 +27,7 @@ def create_board():
 def create_coins(board):
     coins = []
    
-    for y in range(len(board)):
-        for x in range(len(board[y])):
-            if board[y][x] == 0:
-                coins.append((x, y))
-    
-    Liste_coins_remove = [(1,1), (14,1), (1,13), (14,13),(5,7),(5,8),(5,9),(5,10)]
-    
-    for x in Liste_coins_remove:
-        coins.remove (x)
-    
+
 
  # Placeholder, ligne à retirer
 
