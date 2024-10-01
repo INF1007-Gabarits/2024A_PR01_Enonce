@@ -209,7 +209,7 @@ class Game:
 
 if __name__ == "__main__":
     pygame.init()
-    game = Game()
-
+    screen = pygame.display.set_mode((800, 800))
+    game = Game(screen)
     pygame.quit()
     sys.exit()
