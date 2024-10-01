@@ -57,7 +57,7 @@ class Ghost:
         for x in range(int(rect.left / TILE_WIDTH), int(rect.right / TILE_WIDTH) + 1):
             for y in range(int(rect.top / TILE_HEIGHT), int(rect.bottom / TILE_HEIGHT) + 1):
                 if 0 <= x < len(self.maze[0]) and 0 <= y < len(self.maze):
-                    if self.maze[y][x] == 1: # Vérifier si le fantôme touche un mur
+                    if self.maze[y][x] == 1: # Vérifier si le fantôme touche un murr
                         return True
         return False
 
