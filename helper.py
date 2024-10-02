@@ -1,5 +1,4 @@
 special_coins_pos = [(1, 1), (14, 1), (1, 13), (14, 13)]
-center_pos = [(12, 7), (11, 7), (13, 7), (14, 7)]
 
 def create_board():
 
@@ -33,6 +32,7 @@ def create_coins(board):
 
     # TODO: Ajouter la position de toutes les cases '0' à la variable coins. Pour ajouter un élément, vous pouvez utiliser l'expression suivante :
     # coins.append((x, y))
+
     # en remplacant x et y par la position. Notez que le premier coin est à la position (0, 0)
     for i in range(len(board)) :
         for j in range(len(board[0])) :
