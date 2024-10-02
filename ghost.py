@@ -63,7 +63,7 @@ class Ghost:
                 self.direction = Direction.UP
 
 
-    def check_collision(self, rect):
+    def check_collision(self, rect) :
         # Vérifier si le rectangle du fantôme touche un mur
         for x in range(int(rect.left / TILE_WIDTH), int(rect.right / TILE_WIDTH) + 1):
             for y in range(int(rect.top / TILE_HEIGHT), int(rect.bottom / TILE_HEIGHT) + 1):
@@ -96,8 +96,7 @@ class Ghost:
                 # TODO: Si aucune collision n'est détectée, définir cette direction comme la nouvelle direction du fantôme avec `self.set_direction()` et sortir de la boucle
                 self.direction = dir
                 self.pos = [next_x, next_y]
-                
-                return  # Sortir de la méthode une fois la direction changée
+                break  # Sortir de la méthode une fois la direction changée
 
     def stop(self):
         self.direction = Direction.STOP
