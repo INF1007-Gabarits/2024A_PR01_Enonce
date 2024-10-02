@@ -43,9 +43,10 @@ def create_coins(board):
 	# coins.append((x, y))
 	# en remplacant x et y par la position. Notez que le premier coin est à la position (1, 1)
 
+
 	# TODO: Retirer les coins de chaque "coin" du carré. Vous devez utiliser la variable 'special_coins_pos' et la fonction 'remove'.
 
-	return coins
+  return coins
 
 def create_special_coins(board):
 	special_coins = []
