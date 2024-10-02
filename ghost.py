@@ -92,7 +92,6 @@ class Ghost:
             if not self.check_collision(next_rect):
                 # TODO: Si aucune collision n'est détectée, définir cette direction comme la nouvelle direction du fantôme avec `self.set_direction()` et sortir de la boucle
                 self.direction = i
-                self.rect = next_rect
                 return  # Sortir de la méthode une fois la direction changée
 
     def stop(self):
