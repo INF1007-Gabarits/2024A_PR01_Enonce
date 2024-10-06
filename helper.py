@@ -47,6 +47,5 @@ def create_special_coins(board):
     special_coins = []
 
     for pos in special_coins_pos:
-        special_coins_pos.append(pos)
-    
+        special_coins.append(pos)  
     return special_coins

@@ -92,22 +92,16 @@ class Game:
         for i in range(self.pacman.lives):
             self.screen.blit(pacman_image, (150 + i * 40, 50 * 15))
 
-    def handle_keypress(self, event):
-        pass
-        
+    def handle_keypress(self, event):    
         if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
-                     if self.check_collision((1, 0)):
-                        self.pacman.set_direction((1, 0))
+                     self.pacman.set_direction((1, 0))
                 elif event.key == pygame.K_LEFT:
-                    if self.check_collision((-1, 0)):
-                        self.pacman.set_direction((-1, 0))
+                    self.pacman.set_direction((-1, 0))
                 elif event.key == pygame.K_UP:
-                    if self.check_collision((0, -1)):
-                        self.pacman.set_direction((0, -1))
+                    self.pacman.set_direction((0, -1))
                 elif event.key == pygame.K_DOWN:
-                    if self.check_collision((0, 1)):
-                        self.pacman.set_direction((0, 1))
+                    self.pacman.set_direction((0, 1))
 
                 
     def check_collision(self, direction):
@@ -209,7 +203,6 @@ class Game:
 
 if __name__ == "__main__":
     pygame.init()
-    screen = pygame.display.set_mode((800, 800))
-    game = Game(screen)
+    game = Game()
     pygame.quit()
     sys.exit()
